@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling==1.32.0"]
+requires = ["hatchling==1.32.4"]
 build-backend = "hatchling.build"
 
 [project]
@@ -46,12 +46,12 @@ Changelog = "https://github.com/nymrel/agent-proofchain/blob/main/CHANGELOG.md"
 [project.optional-dependencies]
 dev = [
   "bandit==1.9.4",
-  "build==1.6.0",
-  "coverage==7.16.0",
-  "mypy==2.3.1",
+  "build==1.6.1",
+  "coverage==7.16.2",
+  "mypy==2.4.0",
   "pip-audit==2.10.1",
   "pytest==9.1.1",
-  "ruff==0.16.5",
+  "ruff==0.16.10",
   "twine==7.0.0",
 ]
 
