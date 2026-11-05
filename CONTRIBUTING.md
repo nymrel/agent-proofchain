@@ -15,12 +15,15 @@ Contributions are welcome when they strengthen that core without turning the pro
 
 ```bash
 python -m venv .venv
+source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ruff check .
 pytest
 python -m build
 proofchain demo
 ```
+
+On Windows PowerShell, activate with `.\.venv\Scripts\Activate.ps1` instead.
 
 The supported CI matrix covers Python 3.11 and 3.13 on Ubuntu and Windows.
 

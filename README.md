@@ -19,9 +19,12 @@ worktrees, target authorization, and human-controlled enrollment.
 
 ```bash
 python -m venv .venv
+source .venv/bin/activate
 python -m pip install -e ".[dev]"
 proofchain demo
 ```
+
+On Windows PowerShell, activate with `.\.venv\Scripts\Activate.ps1` instead.
 
 Expected shape:
 
