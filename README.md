@@ -17,6 +17,18 @@ worktrees, target authorization, and human-controlled enrollment.
 
 ## Run the complete local demo
 
+If you are reviewing an agent's work without writing code, start with the
+expected demo results below. **ALLOW** means the configured admission policy
+accepted the request; **VERIFY** means the retained chain passed its integrity
+check. Neither means the task was completed or independently observed.
+
+Developers can run the demo and then follow the
+[authenticated gateway adapter](examples/gateway_adapter.py). Agents and
+automation should start with `proofchain demo --json` and the
+[runtime adapter contract](docs/ADAPTER_CONTRACT.md), rather than parsing the
+human report. The host supplies authenticated identity; request text cannot
+authorize its own runtime.
+
 ```bash
 python -m venv .venv
 python -m pip install -e ".[dev]"
@@ -37,6 +49,13 @@ TAMPER expected outcomes: 5/5 matched
 
 The demo is network-free, creates only temporary local evidence, and emits no raw request content
 or caller-controlled identity. Use `proofchain demo --json` for machine-readable output.
+
+For an existing ledger, `proofchain verify --ledger PATH` returns JSON and exits
+`0` on a valid chain or `1` on failed verification. `evaluate` exits `0` when
+allowed and `2` when denied; malformed input also exits `2` with a diagnostic on
+stderr. Preserve both the structured receipt and exit status. A denial goes back
+to the policy owner for review; a broken chain requires investigation, not a new
+empty ledger. See [Support](SUPPORT.md) for the existing help path.
 
 ## Why this exists
 
